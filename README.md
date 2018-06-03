@@ -13,7 +13,7 @@ Course Syllabus: http://cs231n.stanford.edu/2017/syllabus.html
 * Implement a Softmax classifier
 * Two-Layer Neural Network
 * Higher Level Representations: Image Features
-http://cs231n.github.io/assignments2017/assignment1/
+* http://cs231n.github.io/assignments2017/assignment1/
 
 
 ### Assignment 2: Neural networks, ConvNets
@@ -22,7 +22,7 @@ http://cs231n.github.io/assignments2017/assignment1/
 * Dropout
 * Convolutional Networks
 * PyTorch / TensorFlow on CIFAR-10
-http://cs231n.github.io/assignments2017/assignment2/
+* http://cs231n.github.io/assignments2017/assignment2/
 
 
 ### Assignment 3
@@ -31,4 +31,4 @@ http://cs231n.github.io/assignments2017/assignment2/
 * Network Visualization: Saliency maps, Class Visualization, and Fooling Images
 * Style Transfer
 * Generative Adversarial Networks
-http://cs231n.github.io/assignments2017/assignment3/
+* http://cs231n.github.io/assignments2017/assignment3/
