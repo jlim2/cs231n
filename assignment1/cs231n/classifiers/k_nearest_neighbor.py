@@ -1,5 +1,9 @@
+""" ----------------------------------------------------------------------------
+File: k_nearest_neighbor.py
+Authors: Stanford's CS231n staffs, Jinyoung Lim
+Date: June 2018
+-----------------------------------------------------------------------------"""
 import numpy as np
-import math
 
 class KNearestNeighbor(object):
   """ a kNN classifier with L2 distance """
@@ -147,21 +151,30 @@ class KNearestNeighbor(object):
       # the ith test point.
       closest_y = []
       #########################################################################
-      # TODO:                                                                 #
       # Use the distance matrix to find the k nearest neighbors of the ith    #
       # testing point, and use self.y_train to find the labels of these       #
       # neighbors. Store these labels in closest_y.                           #
       # Hint: Look up the function numpy.argsort.                             #
       #########################################################################
-      pass
+      # get indices of smallest dists for ith training point by sorting
+      ind = np.argsort(dists)[i, ]
+      # argsort usages:
+      #     http://mathalope.co.uk/2017/05/23/numpy-exercise-argsort-and-fancy-indexing/
+      #     https://www.programcreek.com/python/example/5635/numpy.argsort
+      closest_y = self.y_train[ind][:k] # reminder: y[i] is the label for X[i]
       #########################################################################
-      # TODO:                                                                 #
       # Now that you have found the labels of the k nearest neighbors, you    #
       # need to find the most common label in the list closest_y of labels.   #
       # Store this label in y_pred[i]. Break ties by choosing the smaller     #
       # label.                                                                #
       #########################################################################
-      pass
+      # use max instead of statistics.mode to handle ties
+      # max usage: https://stackoverflow.com/questions/6783000/which-maximum-does-python-pick-in-the-case-of-a-tie
+      # flatten usage: https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.flatten.html
+      closest_y_flatten = list(closest_y.flatten('C'))
+      y_pred[i] = max(closest_y_flatten, key = closest_y_flatten.count)
+
+
       #########################################################################
       #                           END OF YOUR CODE                            #
       #########################################################################
